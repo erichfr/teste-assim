@@ -10,6 +10,7 @@ Este projeto é um sistema de gestão de funcionários e cargos desenvolvido par
 - **Componentes de UI:** SweetAlert2 (Alertas), jQuery Mask (Máscaras de input)
 - **Containerização:** Docker & Docker Compose
 - **Ferramenta de Banco:** Adminer (disponível via container)
+- **Google Gemini Pro**
 
 ## Estrutura
 
@@ -57,5 +58,7 @@ O sistema está configurado para criar as tabelas automaticamente via script ini
 - **Se o sistema redirecionar para localhost/index.php (sem a porta 8080), limpe o cache do seu navegador ou utilize uma Janela Anônima.**
 - **Gestão de Funcionários: - Cadastro completo com campos de endereço e contato.**
 - **Certifique-se de que as portas 8080 e 3306 não estejam sendo usadas por outros serviços.**
+
+Obrigado pela oportunidade!
 
 
