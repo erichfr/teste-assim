@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  app:
+    image: php:8.2-apache
+    container_name: assim_saude_app
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - assim_saude_net
+    depends_on:
+      - db
+    command: >
+      sh -c "docker-php-ext-install pdo pdo_mysql && apache2-foreground"
+
+  db:
+    image: mysql:8.0
+    container_name: assim_saude_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: assim_saude
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    networks:
+      - assim_saude_net
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+  adminer:
+    image: adminer
+    container_name: assim_saude_adminer
+    restart: always
+    ports:
+      - "8081:8080"
+    networks:
+      - assim_saude_net
+
+networks:
+  assim_saude_net:
+    driver: bridge
