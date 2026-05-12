@@ -17,7 +17,7 @@ O projeto está organizado da seguinte forma:
 
 - `/src`: Contém a lógica de negócio (Models e Controllers).
 - `/public`: Contém os arquivos acessíveis pelo navegador (CSS, JS, Views).
-- `/docker`: Configurações de ambiente.
+- `docker-compose.yml`: Configurações de ambiente.
 - `index.php`: Ponto de entrada (Router).
 
 ## Instalação e Execução
